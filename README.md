@@ -1,2 +1,2 @@
 # Text-Classification
-Reproducing the models in the papers
+Using keras to reproduce the models in the papers

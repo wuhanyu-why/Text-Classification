@@ -5,5 +5,5 @@ cnn_text_classification: reproduce the model in the paper "Convolutional Neural 
 
 drnn_text_classification: reproduce the model in the paper "Disconnected Recurrent Neural Networks for Text Categorization" ACL2018.
 
-drnn_text_classification: reproduce the model in the paper "Recurrent Convolutional Neural Networks for Text Classification" AAAI2015.
+rcnn_text_classification: reproduce the model in the paper "Recurrent Convolutional Neural Networks for Text Classification" AAAI2015.
 

@@ -57,19 +57,19 @@ def load_data():
     X_train = pad_sequences(X_train, maxlen=max_seq_len, padding="pre")
     X_test = tokenizer.texts_to_sequences(X_test)
     X_test = pad_sequences(X_test, maxlen=max_seq_len, padding='pre')
-    word_index = tokenizer.word_index
-    return X_train, X_test, Y_train, Y_test, word_index
+    word_index = tokenizer.index_word
+    return X_train, X_test, Y_train, Y_test, index_word
 
-X_train, X_test, Y_train, Y_test, word_index = load_data()
+X_train, X_test, Y_train, Y_test, index_word = load_data()
 
-embedding_matrix = load_word_embedding("E:/BaiduNetdiskDownload/glove.6B/glove.6B.100d.txt", word_index, embedding_dim)
+embedding_matrix = load_word_embedding("E:/BaiduNetdiskDownload/glove.6B/glove.6B.100d.txt", index_word, embedding_dim)
 print(embedding_matrix.shape)
 
 
 
 # 定义模型(model)
 seq_input = Input(shape=(max_seq_len, ), dtype='int32')
-embedding = Embedding(input_dim=len(word_index) + 1,
+embedding = Embedding(input_dim=len(index_word) + 1,
                             output_dim=embedding_dim,
                             weights=[embedding_matrix],
                             input_length=max_seq_len,
